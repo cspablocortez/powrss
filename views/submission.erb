@@ -1,0 +1,7 @@
+<% if @feed %>
+  <h1><%= @feed.title %></h1>
+  <p>Description: <%= @feed.description %></p>
+  <p><a href="<%=  @feed.url %>">Source</a></p>
+  <p>Last modified: <%= @feed.last_modified %></p>
+  <p>Fetched: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %></p>
+<% end %>

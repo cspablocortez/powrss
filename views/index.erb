@@ -1,0 +1,15 @@
+<h1>Feedjira Test</h1>
+
+<p><a href="/">Home</a></p>
+
+<p>This is a test of the <a href="https://github.com/feedjira/feedjira">Feedjira</a> parsing library</p>
+
+<p>Submit the link to an RSS feed and you will see the info parsed.</p>
+
+<form action="submit" method="post">
+  <label for="feed_url">Feed URL</label>
+  <input id="feed_url" type="url" name="feed_url">
+  <input type="submit">
+</form>
+
+<%= erb :submission %>
