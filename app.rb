@@ -9,3 +9,8 @@ require "slim"
 get "/" do
   slim :index
 end
+
+post "/submit" do
+  @submitted = true
+  slim :index
+end
