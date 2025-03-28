@@ -1,1 +1,0 @@
-web: APP_ENV=production bundle exec rackup - "$PORT"
