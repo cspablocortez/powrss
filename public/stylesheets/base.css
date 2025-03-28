@@ -3,6 +3,40 @@
   --gradient-primary: linear-gradient(135deg, #004aad 0%, #1a67e1 100%);
 }
 
+button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  /* border-radius: 4px; */
+  background-color: #f0f0f0;
+  min-height: 48px;
+  min-width: 100px;
+  position: relative;
+}
+
+/* Create the loading spinner using ::after pseudo-element */
+button:empty::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 10px);
+  width: 16px;
+  height: 16px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top: 3px solid #ecf7ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 input:focus,
 select:focus,
 textarea:focus {
