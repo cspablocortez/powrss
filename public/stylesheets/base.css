@@ -104,6 +104,10 @@ main {
   flex-grow: 1;
 }
 
+.suggestions {
+  margin-top: 4rem;
+}
+
 @media screen and (min-width: 600px) {
   img.navbar__logo {
     height: 80px;
@@ -111,6 +115,10 @@ main {
   }
 
   .suggestions {
+    margin-top: 6rem;
+  }
+
+  .suggestions ul {
     columns: 2;
   }
 }
