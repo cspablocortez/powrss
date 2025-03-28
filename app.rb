@@ -1,9 +1,9 @@
 require "httparty"
 require "feedjira"
 require "sinatra"
-require "slim"
 
 def fetch_url_data(url)
+  # binding.irb
   puts "Fetching #{url}..."
   xml = HTTParty.get(url).body
   feed = Feedjira.parse(xml)
