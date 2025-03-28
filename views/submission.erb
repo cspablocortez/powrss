@@ -1,35 +1,42 @@
-<h1>Feedjira Test</h1>
+<h1>RSS Feed Parser</h1>
 
 <nav>
   <a href="/">Back to Home</a>
 </nav>
 
-<% if @feed %>
-  <h2><%= @feed.title %></h2>
-  <p><strong>Description:</strong> <%= @feed.description %></p>
-  <p><strong>Source:</strong> <%=  @feed.url %></p>
-  <p><strong>Last modified:</strong> <%= @feed.last_modified %></p>
-  <p><strong>Fetched:</strong> <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %></p>
+<main style="flex-grow: 1">
+  <% if @feed %>
+    <h2><%= @feed.title %></h2>
+    <p><strong>Description:</strong> <%= @feed.description %></p>
+    <p><strong>Source:</strong> <%=  @feed.url %></p>
+    <p><strong>Last modified:</strong> <%= @feed.last_modified %></p>
+    <p><strong>Fetched:</strong> <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %></p>
 
-  <h3>Entries (<%= @feed.entries.count %>)</h3>
-  <% @feed.entries.each_with_index do |entry, index| %>
-    <ul style="margin-top: 4rem">
-      <li style="display: block">
-        <article>
-          <hgroup>
-            <h4><a href="<%= entry.url || '#' %>"><%= entry.title || 'No title available' %></a></h4>
-            <p><strong>Author</strong>: <%= entry.author || 'No author available' %></p>
-            <p><strong>Published</strong>: <%= entry.published || 'No date available' %></p>
-          </hgroup>
-          <details>
-            <summary><%= entry.summary || 'No summary available' %></summary>
-            <main>
-              <%= entry.content || "No content available" %>
-            </main>
-          </details>
-        </article>
-      </li>
-    </ul>
-    <% print "." %>
+    <h3>Entries (<%= @feed.entries.count %>)</h3>
+    <% @feed.entries.each_with_index do |entry, index| %>
+      <ul style="margin-top: 4rem">
+        <li style="display: block">
+          <article>
+            <hgroup>
+              <h4><a href="<%= entry.url || '#' %>"><%= entry.title || 'No title available' %></a></h4>
+              <p><strong>Author</strong>: <%= entry.author || 'No author available' %></p>
+              <p><strong>Published</strong>: <%= entry.published || 'No date available' %></p>
+            </hgroup>
+            <details>
+              <summary><%= entry.summary || 'No summary available' %></summary>
+              <main>
+                <%= entry.content || "No content available" %>
+              </main>
+            </details>
+          </article>
+        </li>
+      </ul>
+      <% print "." %>
+    <% end %>
+  <% else %>
+    <h2 style="margin-bottom: 1rem">Error</h2>
+    <p>We were unable to fetch data for <strong><%= @url %></strong>.</p>
+    <p>Make sure your URL links to an RSS feed. For example, if you searched for <code>https://example.com</code>, you might be missing the path to the feed, like <code>https://example.com/feed</code></p>
+    <p>Note: Unfortunately, not all websites have an RSS feed.</p>
   <% end %>
-<% end %>
+</main>
