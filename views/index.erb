@@ -1,26 +1,21 @@
-<main style="flex-grow: 1">
-  <h1>RSS Feed Parser</h1>
+<p>Submit the link to an RSS feed and you will see the info parsed.</p>
 
-  <p>Submit the link to an RSS feed and you will see the info parsed.</p>
+<form action="submit" method="post">
+  <label for="feed_url">Feed URL</label>
+  <input id="feed_url" type="url" name="feed_url" required="true" placeholder="https://example.com/feed">
+  <input type="submit">
+</form>
 
-  <form action="submit" method="post">
-    <label for="feed_url">Feed URL</label>
-    <input id="feed_url" type="url" name="feed_url" required="true" placeholder="https://example.com/feed">
-    <input type="submit">
-  </form>
+<br>
+<p>Some suggestions:</p>
 
-  <br>
-  <p>Some suggestions:</p>
-
-  <ul>
-    <li><a href="https://rss.beehiiv.com/feeds/4aF2pGVAEN.xml">News Minimalist</a></li>
-    <li><a href="https://retiredmartin.com/feed">retiredmartin</a></li>
-    <li><a href="https://dc20011.blogspot.com/feeds/posts/default">20011</a></li>
-    <li><a href="https://bearblog.dev/discover/feed">Bear Blog Trending Posts</a></li>
-    <li><a href="https://sylvia.bearblog.dev/feed">A parenthetical departure by Sylvia</a></li>
-    <li><a href="https://world.hey.com/dhh/feed.atom">David Heinemeier Hansson</a></li>
-  </ul>
-
-</main>
+<ul>
+  <li><a href="https://rss.beehiiv.com/feeds/4aF2pGVAEN.xml">News Minimalist</a></li>
+  <li><a href="https://retiredmartin.com/feed">retiredmartin</a></li>
+  <li><a href="https://dc20011.blogspot.com/feeds/posts/default">20011</a></li>
+  <li><a href="https://bearblog.dev/discover/feed">Bear Blog Trending Posts</a></li>
+  <li><a href="https://sylvia.bearblog.dev/feed">A parenthetical departure by Sylvia</a></li>
+  <li><a href="https://world.hey.com/dhh/feed.atom">David Heinemeier Hansson</a></li>
+</ul>
 
 <script src="javascripts/suggestions.js"></script>

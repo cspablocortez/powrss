@@ -5,9 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/digitallytailored/classless@latest/classless.min.css">
     <title>RSS Parser</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        max-width: 920px;
+      }
+      nav {
+        display: flex;
+        justify-content: end;
+        gap: 1rem;
+      }
+    </style>
   </head>
-  <body style="display: flex; flex-direction: column; min-height: 100vh; max-width: 920px">
-    <%= yield %>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+    </nav>
+    <h1>Artemis</h1>
+    <main style="flex-grow: 1">
+      <%= yield %>
+    </main>
     <footer>
       <p style="text-align: center; font-size: 80%; color: gray;">©<%= Time.now.year%> Pablo Enoc. <a href="https://github.com/cspablocortez/feedjira-test">Source code</a> licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html#license-text">GNU GPL v3</a>.</p>
     </footer>
