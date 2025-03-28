@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="powRSS" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/digitallytailored/classless@latest/classless.min.css">
-    <title>powRSS | RSS Feed Finder</title>
+    <title>powRSS - Find and read RSS feeds</title>
     <style>
       body {
         display: flex;
@@ -15,12 +20,23 @@
       nav {
         display: flex;
         justify-content: space-between;
-        align-items: baseline;
+        align-items: center;
 
-        & div {
+        & div.navmenu {
           display: flex;
           justify-content: space-around;
           gap: 1rem;
+        }
+
+        & div.logo {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          & img {
+            height: 80px;
+            width: 80px;
+          }
         }
       }
 
@@ -31,8 +47,11 @@
   </head>
   <body>
     <nav>
-      <h1>powRSS</h1>
-      <div>
+      <div class="logo">
+        <img src="/apple-touch-icon.png" alt="powRSS Logo">
+        <h1>powRSS</h1>
+      </div>
+      <div class="navmenu">
         <a href="/">Home</a>
         <a href="/about">About</a>
       </div>
