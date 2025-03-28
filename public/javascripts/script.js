@@ -14,7 +14,7 @@ links.forEach((link) => {
 
 // Add URI scheme
 
-function addScheme() {
+function validateURL() {
   const input = document.querySelector("#feed_url");
   let url = input.value.trim();
 
