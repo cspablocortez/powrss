@@ -11,7 +11,7 @@ def fetch_url_data(url)
       raise "Failed to fetch data. HTTP Status Code: #{response.code}"
     end
 
-    xml = response.body
+    xml = response.body.force_encoding('UTF-8')
     feed = Feedjira.parse(xml)
   rescue StandardError => e
     puts "Error: #{e.message}"
