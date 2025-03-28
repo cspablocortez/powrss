@@ -39,7 +39,6 @@ p.hero__tagline {
 }
 
 .navbar {
-  /* background-color: lavender; */
   display: flex;
   justify-content: space-between;
 }
@@ -50,7 +49,6 @@ p.hero__tagline {
 }
 
 .navbar__menu {
-  /* border: 1px solid red; */
   align-items: center;
   display: flex;
   gap: 1rem;
@@ -63,7 +61,7 @@ p.hero__tagline {
   }
 
   & a:hover {
-    opacity: 0.87;
+    opacity: 0.82;
   }
 }
 
