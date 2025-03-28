@@ -1,4 +1,6 @@
-powRSS (pronounced "powers") is an RSS finder and reader.
+# About
+
+**powRSS** (pronounced "powers") is an RSS finder and reader.
 
 Enter a URL to find and parse a website's RSS feeds. You can even read recent posts right within the site. It's a quick way to gauge the frequency of a website's updates, this way you can decide if you want to subscribe to the site with your own feed aggregator.
 
