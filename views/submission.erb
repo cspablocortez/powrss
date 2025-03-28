@@ -1,17 +1,23 @@
-<% if @feed %>
-  <h1><%= @feed.title %></h1>
-  <p>Description: <%= @feed.description %></p>
-  <p><a href="<%=  @feed.url %>">Source</a></p>
-  <p>Last modified: <%= @feed.last_modified %></p>
-  <p>Fetched: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %></p>
+<h1>Feedjira Test</h1>
 
-  <h2>Entries</h2>
+<nav>
+  <a href="/">Back to Home</a>
+</nav>
+
+<% if @feed %>
+  <h2><%= @feed.title %></h2>
+  <p><strong>Description:</strong> <%= @feed.description %></p>
+  <p><strong>Source:</strong> <%=  @feed.url %></p>
+  <p><strong>Last modified:</strong> <%= @feed.last_modified %></p>
+  <p><strong>Fetched:</strong> <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %></p>
+
+  <h3>Entries (<%= @feed.entries.count %>)</h3>
   <% @feed.entries.each_with_index do |entry, index| %>
     <ul style="margin-top: 4rem">
       <li style="display: block">
         <article>
           <hgroup>
-            <h3><a href="<%= entry.url || '#' %>"><%= entry.title || 'No title available' %></a></h3>
+            <h4><a href="<%= entry.url || '#' %>"><%= entry.title || 'No title available' %></a></h4>
             <p><strong>Author</strong>: <%= entry.author || 'No author available' %></p>
             <p><strong>Published</strong>: <%= entry.published || 'No date available' %></p>
           </hgroup>
