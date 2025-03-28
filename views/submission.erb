@@ -1,6 +1,6 @@
 <% if @feed %>
   <h2><%= @feed.title %></h2>
-  <p><strong>Description:</strong> <%= @feed.description %></p>
+  <p><strong>Description:</strong> <%= @feed.description || 'No description available' %></p>
   <p><strong>Source:</strong> <%=  @feed.url %></p>
   <p><strong>Last modified:</strong> <%= @feed.last_modified %></p>
   <p><strong>Fetched:</strong> <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %></p>
