@@ -1,6 +1,7 @@
 require "httparty"
 require "feedjira"
 require "sinatra"
+require "kramdown"
 
 def fetch_url_data(url)
   puts "Fetching #{url}..."
@@ -20,6 +21,11 @@ end
 
 get "/" do
   erb :index
+end
+
+get "/about" do
+  markdown_content = File.read("about.md")
+  erb Kramdown::Document.new(markdown_content).to_html
 end
 
 post "/submit" do
