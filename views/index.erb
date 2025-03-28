@@ -4,13 +4,13 @@
 </div>
 
 <form action="feed" method="post" onsubmit="return validateURL()">
-  <input id="feed_url" type="text" name="feed_url" required placeholder="example.com/feed" spellcheck="false">
-  <input type="submit" value="Search" style="display: block; margin-inline: auto;">
+  <input id="feed_url" type="text" name="feed_url" required placeholder="example.com/feed" spellcheck="false" style="max-width: 720px; margin-inline: auto;">
+  <input id="submit-btn" type="submit" value="Search" style="display: block; margin-inline: auto;">
 </form>
 
-<p style="margin-top: 2rem;">Some suggestions:</p>
+<p style="margin-top: 2rem;">Suggestions:</p>
 
-<ul>
+<ul class="suggestions">
   <li><a href="https://rss.beehiiv.com/feeds/4aF2pGVAEN.xml">News Minimalist</a></li>
   <li><a href="https://news.ycombinator.com/rss">Y Combinator's Hacker News</a></li>
   <li><a href="https://bearblog.dev/discover/feed">Bear Blog Trending Posts</a></li>
