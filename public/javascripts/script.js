@@ -9,6 +9,7 @@ links.forEach((link) => {
     event.preventDefault();
     formInput.value = link.href;
     form.submit();
+    setLoadingButton();
   });
 });
 
@@ -31,5 +32,16 @@ function validateURL() {
   }
 
   input.value = url;
+  setLoadingButton();
   return true; // Proceed with form submission
+}
+
+// Clear out button to generate loading animation
+
+function setLoadingButton() {
+  const button = document.querySelector("#submit-btn");
+  button.parentNode.removeChild(button);
+  emptyButton = document.createElement("button");
+  emptyButton.style = "display: block; margin-inline: auto;";
+  form.appendChild(emptyButton);
 }
