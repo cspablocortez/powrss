@@ -7,7 +7,7 @@
 
   <h3>Entries (<%= @feed.entries.count %>)</h3>
   <% @feed.entries.each_with_index do |entry, index| %>
-    <ul style="margin-top: 4rem">
+    <ul style="padding-left: 0">
       <li style="display: block">
         <article>
           <hgroup>
@@ -29,6 +29,6 @@
 <% else %>
   <h2 style="margin-bottom: 1rem">Error</h2>
   <p>We were unable to fetch data for <strong><%= @url %></strong>.</p>
-  <p>Make sure your URL links to an RSS feed. For example, if you searched for <code>https://example.com</code>, you might be missing the path to the feed, like <code>https://example.com/feed</code></p>
+  <p>Make sure your URL links to an RSS feed. If you searched for <code>https://example.com</code>, you might be missing the path to the feed, like <code>https://example.com/feed</code></p>
   <p>Note: Unfortunately, not all websites have an RSS feed.</p>
 <% end %>
