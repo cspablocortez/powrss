@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/digitallytailored/classless@latest/classless.min.css">
     <title>Feedjira Sinatra Test</title>
   </head>
-  <body>
+  <body style="display: flex; flex-direction: column; min-height: 100vh; max-width: 920px">
     <%= yield %>
+    <footer>
+      <p style="text-align: center; font-size: 80%; color: gray;">©<%= Time.now.year%> Pablo Enoc. <a href="https://github.com/cspablocortez/feedjira-test">Source code</a> licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html#license-text">GNU GPL v3</a>.</p>
+    </footer>
   </body>
 </html>
