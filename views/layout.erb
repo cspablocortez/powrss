@@ -17,55 +17,18 @@
     <meta property="og:type" content="website">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/digitallytailored/classless@latest/classless.min.css">
+    <link rel="stylesheet" href="stylesheets/base.css">
     <title>powRSS - Find and read RSS feeds</title>
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        max-width: 920px;
-      }
-      nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        & div.navmenu {
-          display: flex;
-          justify-content: space-around;
-          gap: 1rem;
-        }
-
-        & div.logo {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-
-          & img {
-            height: 80px;
-            width: 80px;
-          }
-        }
-      }
-
-      main {
-        margin-block: 2rem;
-      }
-    </style>
   </head>
   <body>
-    <nav>
-      <div class="logo">
-        <img src="/apple-touch-icon.png" alt="powRSS Logo">
-        <h1>powRSS</h1>
-      </div>
-      <div class="navmenu">
+    <nav class="navbar">
+      <img src="/apple-touch-icon.png" alt="powRSS Logo" class="navbar__logo">
+      <div class="navbar__menu">
         <a href="/">Home</a>
         <a href="/about">About</a>
       </div>
     </nav>
-
-    <main style="flex-grow: 1">
+    <main>
       <%= yield %>
     </main>
     <footer>
