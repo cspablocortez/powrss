@@ -4,4 +4,26 @@
   <p><a href="<%=  @feed.url %>">Source</a></p>
   <p>Last modified: <%= @feed.last_modified %></p>
   <p>Fetched: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %></p>
+
+  <h2>Entries</h2>
+  <% @feed.entries.each_with_index do |entry, index| %>
+    <ul style="margin-top: 4rem">
+      <li style="display: block">
+        <article>
+          <hgroup>
+            <h3><a href="<%= entry.url || '#' %>"><%= entry.title || 'No title available' %></a></h3>
+            <p><strong>Author</strong>: <%= entry.author || 'No author available' %></p>
+            <p><strong>Published</strong>: <%= entry.published || 'No date available' %></p>
+          </hgroup>
+          <details>
+            <summary><%= entry.summary || 'No summary available' %></summary>
+            <main>
+              <%= entry.content || "No content available" %>
+            </main>
+          </details>
+        </article>
+      </li>
+    </ul>
+    <% print "." %>
+  <% end %>
 <% end %>
