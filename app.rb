@@ -3,10 +3,19 @@ require "feedjira"
 require "sinatra"
 
 def fetch_url_data(url)
-  # binding.irb
   puts "Fetching #{url}..."
-  xml = HTTParty.get(url).body
-  feed = Feedjira.parse(xml)
+  begin
+    response = HTTParty.get(url)
+    if response.code != 200
+      raise "Failed to fetch data. HTTP Status Code: #{response.code}"
+    end
+
+    xml = response.body.encode("UTF-8", invalid: :replace, undef: :replace, replace: "?")
+    feed = Feedjira.parse(xml)
+  rescue StandardError => e
+    puts "Error: #{e.message}"
+    nil
+  end
 end
 
 get "/" do
