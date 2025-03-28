@@ -28,8 +28,8 @@ get "/about" do
   erb Kramdown::Document.new(markdown_content).to_html
 end
 
-post "/submit" do
+post "/feed" do
   @url = params[:feed_url]
   @feed = fetch_url_data(@url)
-  erb :submission
+  erb :feed
 end
